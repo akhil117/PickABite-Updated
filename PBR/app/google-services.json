@@ -1,0 +1,283 @@
+{
+  "project_info": {
+    "project_number": "595121794626",
+    "firebase_url": "https://pickabite-b575b.firebaseio.com",
+    "project_id": "pickabite-b575b",
+    "storage_bucket": "pickabite-b575b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595121794626:android:dd5d4e9e5cd71e68",
+        "android_client_info": {
+          "package_name": "com.example.itachi.com.pab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595121794626-midelg32p934qthfooki3f0cbjk0qi59.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.itachi.com.pab",
+            "certificate_hash": "21bf9a926bdee7ec45728cbb3eae0da11569ab69"
+          }
+        },
+        {
+          "client_id": "595121794626-al6v2sgaqpftt5tte56ur5vvc7j2amjt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.itachi.com.pab",
+            "certificate_hash": "896160c80f5e1ed4d31940e5d2bcb7a57ac1bc66"
+          }
+        },
+        {
+          "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUq_Vp6v9MEUx7_fBZm0SLmYsZRnk3g0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595121794626:android:ed4e5a1dc4441e99",
+        "android_client_info": {
+          "package_name": "com.example.vishnu.pickabite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595121794626-nn0i1gr524ks96qfk1e6s8ck36c6ob4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vishnu.pickabite",
+            "certificate_hash": "21bf9a926bdee7ec45728cbb3eae0da11569ab69"
+          }
+        },
+        {
+          "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUq_Vp6v9MEUx7_fBZm0SLmYsZRnk3g0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595121794626:android:f04f993037ccadb4",
+        "android_client_info": {
+          "package_name": "com.example.akhilbatchu.googlemaps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595121794626-j92a2q8mo5r8e5c78j5l4l904dj8ki2a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.akhilbatchu.googlemaps",
+            "certificate_hash": "21bf9a926bdee7ec45728cbb3eae0da11569ab69"
+          }
+        },
+        {
+          "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUq_Vp6v9MEUx7_fBZm0SLmYsZRnk3g0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595121794626:android:7c75bf19bb9d2077",
+        "android_client_info": {
+          "package_name": "com.example.itachi.com.pab_remastered"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595121794626-lel8ct1hflttm51lgqftp4io6b3df9js.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.itachi.com.pab_remastered",
+            "certificate_hash": "896160c80f5e1ed4d31940e5d2bcb7a57ac1bc66"
+          }
+        },
+        {
+          "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUq_Vp6v9MEUx7_fBZm0SLmYsZRnk3g0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595121794626:android:45b85b380398d6c9",
+        "android_client_info": {
+          "package_name": "com.example.vishnu.pab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595121794626-3jurc03hh9qilu8mvmnfa58kc6jb5gl8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vishnu.pab",
+            "certificate_hash": "21bf9a926bdee7ec45728cbb3eae0da11569ab69"
+          }
+        },
+        {
+          "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUq_Vp6v9MEUx7_fBZm0SLmYsZRnk3g0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595121794626:android:82fa6aecc39807b6",
+        "android_client_info": {
+          "package_name": "com.example.itachi.com.pbr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595121794626-svj2331c23drnmrilhe1mk1hopkgdc1p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.itachi.com.pbr",
+            "certificate_hash": "896160c80f5e1ed4d31940e5d2bcb7a57ac1bc66"
+          }
+        },
+        {
+          "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUq_Vp6v9MEUx7_fBZm0SLmYsZRnk3g0E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595121794626-22b8ir42aivqjn2fj9f1mpvmaqu53jkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
