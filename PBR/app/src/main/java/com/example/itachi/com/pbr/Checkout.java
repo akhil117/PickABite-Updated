@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -48,6 +49,7 @@ public class Checkout extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseDatabase mRef;
     private DatabaseReference mref;
+    Button bt;
     Map<String ,String > items;
     String quantity;
 
@@ -64,13 +66,26 @@ public class Checkout extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mRef = FirebaseDatabase.getInstance();
         String uid = mAuth.getUid().toString();
-        mref = mRef.getReference("Cart"+"/"+uid);
+
+        mref = mRef.getReference("Cart").child(uid);
+        bt = (Button)findViewById(R.id.hello);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"iam a button",Toast.LENGTH_LONG).show();
+                Intent intent1 = new Intent(Checkout.this,addingitemstocart.class);
+                startActivity(intent1);
+            }
+        });
+
         ///////////////////////////////////////
         Payu.setInstance(this);
         Intent intent = getIntent();
+
         TextView item = findViewById(R.id.itemname);
         item.setText(intent.getExtras().getString("name"));
         TextView cost = findViewById(R.id.itemcost);
+
         cost.setText("₹. "+intent.getExtras().getString("cost"));
         ImageView img = findViewById(R.id.finalimage);
         Picasso.with(this).load(intent.getExtras().getString("image"))
@@ -83,11 +98,17 @@ public class Checkout extends AppCompatActivity {
         items = new HashMap<>();
         EditText q = (EditText) findViewById(R.id.quantit);
         quantity = q.getText().toString();
+        String key = mref.push().getKey();
         Intent intent = getIntent();
         String cart = intent.getExtras().getString("ID");
+        String name = intent.getExtras().getString("name");
+        String cost = intent.getExtras().getString("cost");
         items.put(cart, quantity);
         Toast.makeText(getApplicationContext(),cart,Toast.LENGTH_SHORT).show();
-        mref.child(cart).setValue(quantity);
+        int total = Integer.parseInt(quantity) * Integer.parseInt(cost);
+        String totalamount = String.valueOf(total);
+        mref.child(key).child("rs").setValue(totalamount);
+        mref.child(key).child("name").setValue(name);
     }
 
 

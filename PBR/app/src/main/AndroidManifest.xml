@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Home"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Catogiry"
             android:configChanges="orientation"
@@ -23,7 +23,8 @@
         <activity
             android:name=".Checkout"
             android:screenOrientation="portrait" />
-        <activity android:name=".LogIn"
+        <activity
+            android:name=".LogIn"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,10 +32,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Signup"
-            android:noHistory="true">
-
-        </activity>
+        <activity
+            android:name=".Signup"
+            android:noHistory="true"></activity>
+        <activity android:name=".addingitemstocart"></activity>
     </application>
 
 </manifest>
