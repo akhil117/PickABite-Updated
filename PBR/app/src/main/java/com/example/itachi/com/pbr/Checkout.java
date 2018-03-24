@@ -72,7 +72,6 @@ public class Checkout extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"iam a button",Toast.LENGTH_LONG).show();
                 Intent intent1 = new Intent(Checkout.this,addingitemstocart.class);
                 startActivity(intent1);
             }
@@ -81,11 +80,9 @@ public class Checkout extends AppCompatActivity {
         ///////////////////////////////////////
         Payu.setInstance(this);
         Intent intent = getIntent();
-
         TextView item = findViewById(R.id.itemname);
         item.setText(intent.getExtras().getString("name"));
         TextView cost = findViewById(R.id.itemcost);
-
         cost.setText("₹. "+intent.getExtras().getString("cost"));
         ImageView img = findViewById(R.id.finalimage);
         Picasso.with(this).load(intent.getExtras().getString("image"))
@@ -93,7 +90,6 @@ public class Checkout extends AppCompatActivity {
 
     }
     ////////////add to cart/////////////////////
-
     public void add(View view){
         items = new HashMap<>();
         EditText q = (EditText) findViewById(R.id.quantit);
@@ -109,20 +105,10 @@ public class Checkout extends AppCompatActivity {
         String totalamount = String.valueOf(total);
         mref.child(key).child("rs").setValue(totalamount);
         mref.child(key).child("name").setValue(name);
+        mref.child(key).child("id").setValue(cart);
+
     }
-
-
-
-
-
-
-
-
-
-
     public void navigateToBaseActivity(View view) {
-
-
         merchantKey="gtKFFx";
         int environment = PayuConstants.STAGING_ENV;
         String email = "vpavan318@gmail.com";
