@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">PAB2</string>
     <string name="quantity">Quantity :</string>
+    <string name="back"><![CDATA[<<Back]]></string>
+    <string name="forgot_password">Forgot PassWord????</string>
+    <string name="we_just_need_your_registered_email_id_to_sent_you_password_reset_instructions">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="enter_the_email">Enter the email</string>
 </resources>

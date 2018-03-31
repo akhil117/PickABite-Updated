@@ -6,6 +6,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,7 +18,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+
         mAuth = FirebaseAuth.getInstance();
         if(isOnline()){
             setContentView(R.layout.activity_home);
@@ -26,6 +28,31 @@ public class Home extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id==R.id.logoutmenu)
+        {
+            mAuth.signOut();
+            finish();
+            return true;
+        }
+        if(id==R.id.cartmenu) {
+            Intent intent = new Intent(Home.this, addingitemstocart.class);
+            startActivity(intent);
+            return  true;
+        }
+        return  true;
+
+    }
+
     public void cakes_list(View view){
         Intent intent = new Intent(this, Catogiry.class);
         intent.putExtra("value",1);

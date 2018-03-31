@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -41,8 +42,8 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class Checkout extends AppCompatActivity {
-
-
+    private  String totalamount;
+    private int total;
     private  String merchantKey, userCredentials;
     private PaymentParams mPaymentParams;
     private  PayuConfig payuConfig;
@@ -94,19 +95,26 @@ public class Checkout extends AppCompatActivity {
         items = new HashMap<>();
         EditText q = (EditText) findViewById(R.id.quantit);
         quantity = q.getText().toString();
-        String key = mref.push().getKey();
-        Intent intent = getIntent();
-        String cart = intent.getExtras().getString("ID");
-        String name = intent.getExtras().getString("name");
-        String cost = intent.getExtras().getString("cost");
-        items.put(cart, quantity);
-        Toast.makeText(getApplicationContext(),cart,Toast.LENGTH_SHORT).show();
-        int total = Integer.parseInt(quantity) * Integer.parseInt(cost);
-        String totalamount = String.valueOf(total);
-        mref.child(key).child("rs").setValue(totalamount);
-        mref.child(key).child("name").setValue(name);
-        mref.child(key).child("id").setValue(cart);
+        if(TextUtils.isEmpty(quantity))
+        {
+            Toast.makeText(getApplicationContext(),"Please enter the Quantity",Toast.LENGTH_LONG).show();
+            return;
+        }
+        else {
 
+            Intent intent = getIntent();
+            String cart = intent.getExtras().getString("ID");
+            String name = intent.getExtras().getString("name");
+            String cost = intent.getExtras().getString("cost");
+            items.put(cart, quantity);
+            Toast.makeText(getApplicationContext(), cart, Toast.LENGTH_SHORT).show();
+            total = Integer.parseInt(quantity) * Integer.parseInt(cost.toString());
+            totalamount = String.valueOf(total);
+            String key = totalamount+name+cart;
+            mref.child(key).child("rs").setValue(totalamount);
+            mref.child(key).child("name").setValue(name);
+            mref.child(key).child("id").setValue(cart);
+        }
     }
     public void navigateToBaseActivity(View view) {
         merchantKey="gtKFFx";

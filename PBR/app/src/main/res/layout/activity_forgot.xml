@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/svg"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.itachi.com.pbr.Forgot">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Here you can put your logo or brand name -->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp"
+            android:src="@drawable/pab" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="@string/forgot_password"
+            android:textColor="@android:color/holo_red_light"
+            android:textStyle="italic"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/we_just_need_your_registered_email_id_to_sent_you_password_reset_instructions"
+            android:textColor="@android:color/holo_red_light"
+            android:textStyle="italic"
+            android:textSize="16dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white_greyish" />
+
+        <EditText
+            android:id="@+id/emailsenter"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/enter_the_email"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/holo_red_light"
+            android:textColorHint="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_reset_password"
+            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dip"
+            android:background="@android:color/holo_orange_light"
+            android:text="RESET PASSWORD"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:text="@string/back"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+
+
+
+
+    </RelativeLayout>

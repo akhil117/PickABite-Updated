@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LogIn extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    TextView email,password;
+    TextView email,password,fpassword;
     Button signup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,15 @@ public class LogIn extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
         getSupportActionBar().hide();
         mAuth = FirebaseAuth.getInstance();
+        fpassword = (TextView)findViewById(R.id.forgotpassword);
+        ///CODE FOR FORGOT PASSWORD
+        fpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LogIn.this,Forgot.class);
+                startActivity(intent);
+            }
+        });
         if(mAuth.getCurrentUser() != null) {
             startActivity(new Intent(LogIn.this, Home.class));
         }

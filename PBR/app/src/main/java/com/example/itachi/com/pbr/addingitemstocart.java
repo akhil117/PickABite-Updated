@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -43,6 +44,7 @@ public class addingitemstocart extends AppCompatActivity {
     List<Cart> cart;
     RecyclerView recyler;
     CartAdaptor cartadaptor;
+    CardView cardview;
     private FirebaseAuth mAuth;
     private GoogleMap mMap;
     private GoogleApiClient client;
@@ -57,7 +59,6 @@ public class addingitemstocart extends AppCompatActivity {
     Button bt;
     double latitude,longitude,end_latitude,end_longitude;
    public int flag1=0,flag2=0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,54 +71,7 @@ public class addingitemstocart extends AppCompatActivity {
         bt=(Button)findViewById(R.id.payment);
         String uid = mAuth.getUid().toString();
         db = FirebaseDatabase.getInstance().getReference("Cart").child(uid);
-        db.addChildEventListener(new ChildEventListener() {
-                                     @Override
-                                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                                         Cart a = dataSnapshot.getValue(Cart.class);
-                                         total = total + Double.parseDouble(a.getRs());
-                                         Log.v("Total",total+"helo");
-                                         cart.add(a);
-                                         if(a.getId().equals("cakes"))
-                                         {
-                                             //Toast.makeText(getApplicationContext(),"entered1",Toast.LENGTH_LONG).show();
-                                             flag1=1;
-                                         }
-                                         if(a.getId().equals("north"))
-                                         {
-                                            // Toast.makeText(getApplicationContext(),"entered2",Toast.LENGTH_LONG).show();
-                                             flag2=2;
-                                         }
-                                         cartadaptor = new CartAdaptor(addingitemstocart.this, cart);
-                                         recyler.setLayoutManager(new LinearLayoutManager(addingitemstocart.this));
-                                         recyler.hasFixedSize();
-                                         recyler.setAdapter(cartadaptor);
-                                         Log.v("Total","rs"+total);
-                                         tv.setText("Rs:"+total);
-                                     }
-                                     @Override
-                                     public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-                                     }
-                                     @Override
-                                     public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                                     }
-                                     @Override
-                                     public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                                     }
-                                     @Override
-                                     public void onCancelled(DatabaseError databaseError) {
-
-                                     }
-                                 }
-        );
-
-
-
-
-
-    bt.setOnClickListener(new View.OnClickListener() {
+        bt.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             String address = locations.getText().toString();
@@ -135,7 +89,38 @@ public class addingitemstocart extends AppCompatActivity {
         }
     });
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                cart.clear();
+                for(DataSnapshot d :dataSnapshot.getChildren())
+                {
+                    Cart a = d.getValue(Cart.class);
+                    cart.add(a);
+                    total = total + Double.parseDouble(a.getRs());
+                    Log.v("Total",total+"helo");
+                    if(a.getId().equals("cakes"))
+                    {
+                        flag1=1;
+                    }
+                    if(a.getId().equals("north"))
+                    {
+                        flag2=2;
+                    }
+                    tv.setText("Rs:"+total);
+                }
+                cartadaptor = new CartAdaptor(addingitemstocart.this, cart);
+                recyler.setLayoutManager(new LinearLayoutManager(addingitemstocart.this));
+                recyler.hasFixedSize();
+                recyler.setAdapter(cartadaptor);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-
-
+            }
+        });
+    }
 }

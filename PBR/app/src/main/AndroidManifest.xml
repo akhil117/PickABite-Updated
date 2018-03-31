@@ -36,7 +36,8 @@
             android:name=".Signup"
             android:noHistory="true" />
         <activity android:name=".addingitemstocart" />
-        <activity android:name=".BillActivity"></activity>
+        <activity android:name=".BillActivity" />
+        <activity android:name=".Forgot"></activity>
     </application>
 
 </manifest>

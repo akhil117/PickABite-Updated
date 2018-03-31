@@ -9,13 +9,14 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
     android:background="@drawable/svg">
+
     <android.support.v7.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:foregroundGravity="center"
-        app:cardCornerRadius="18dp"
-        android:layout_gravity="center">
+        app:cardCornerRadius="18dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,18 +58,18 @@
 
                 <EditText
                     android:id="@+id/pass"
-                    android:drawableStart="@drawable/ic_lock_outline_black_24dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:drawablePadding="12dp"
+                    android:drawableStart="@drawable/ic_lock_outline_black_24dp"
                     android:ems="10"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:padding="8dp"
                     android:textColor="@color/yellow"
-                    android:textColorHint="@color/yellow"/>
+                    android:textColorHint="@color/yellow" />
 
                 <View
                     android:layout_width="fill_parent"
@@ -77,49 +78,52 @@
 
                 <Button
                     android:id="@+id/login"
-                    android:onClick="login"
                     style="@style/Base.TextAppearance.AppCompat.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/background_login"
                     android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="login"
                     android:padding="16dp"
                     android:text="Login"
                     android:textAllCaps="false"
                     android:textColor="#F5F5F5"
-                    android:textSize="18sp"
-                    android:focusable="true" />
+                    android:textSize="18sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
                     android:gravity="center_horizontal">
+
                     <View
-                        android:layout_height="0.5dp"
                         android:layout_width="50dp"
-                        android:background="#795548"
+                        android:layout_height="0.5dp"
                         android:layout_gravity="center"
-                        android:layout_weight = "1"/>
+                        android:layout_weight="1"
+                        android:background="#795548" />
 
                     <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
+                        android:id="@+id/forgotpassword"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Or"
-                        android:textColor="#ef6e0b"
                         android:layout_gravity="center"
-                        android:textSize="13sp"/>
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Forgot-password"
+                        android:textStyle="italic"
+                        android:textColor="#ef6e0b"
+                        android:textSize="13sp" />
 
                     <View
-                        android:layout_height="0.5dp"
                         android:layout_width="50dp"
-                        android:background="#795548"
+                        android:layout_height="0.5dp"
                         android:layout_gravity="center"
-                        android:layout_weight = "1"/>
+                        android:layout_weight="1"
+                        android:background="#795548" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -129,37 +133,37 @@
 
                     <Button
                         android:id="@+id/google_signup"
-                        android:clickable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
-                        android:background="@drawable/googlebgrnd"
-                        android:drawableStart="@drawable/google2"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:layout_gravity="start"
-                        android:padding="10dp"
-                        android:textAllCaps="false"
-                        android:textColor="#424242"
-                        android:text="sign in via google"
                         android:layout_weight="1"
-                        android:focusable="true" />
+                        android:background="@drawable/googlebgrnd"
+                        android:clickable="true"
+                        android:drawableStart="@drawable/google2"
+                        android:focusable="true"
+                        android:padding="10dp"
+                        android:text="sign in via google"
+                        android:textAllCaps="false"
+                        android:textColor="#424242" />
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/signup"
-                    android:onClick="signp"
                     style="@style/TextAppearance.AppCompat.Body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
                     android:clickable="true"
-                    android:padding="8dp"
+                    android:focusable="true"
                     android:maxLines="1"
+                    android:onClick="signp"
+                    android:padding="8dp"
                     android:text="New to PAB?"
                     android:textColor="#ef6e0b"
-                    android:textSize="14sp"
-                    android:focusable="true" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
         </LinearLayout>
