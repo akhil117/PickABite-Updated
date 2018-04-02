@@ -7,7 +7,7 @@
     tools:context="com.example.itachi.com.pbr.addingitemstocart">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="130dp"
         android:layout_marginBottom="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -19,7 +19,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:ems="10"
-        android:hint="Enter the address"
+        android:hint="Enter the City"
         android:inputType="text" />
 
 
@@ -43,6 +43,26 @@
         android:layout_toEndOf="@+id/payment"
         android:text="Presstotalforamount......." />
 
+    <EditText
+        android:id="@+id/addressofdelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Enter the delivery address"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextssssss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addressofdelivery"
+        android:hint="If you ordered cake enter the name or type 'NO' "
+        android:ems="10"
+        android:inputType="text" />
 
 
 </RelativeLayout>

@@ -38,6 +38,9 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'de.hdodenhof:circleimageview:2.2.0'
     implementation project(':sdkui')
+    implementation files('libs/activation.jar')
+    implementation files('libs/additionnal.jar')
+    implementation files('libs/mail.jar')
 }
 
 

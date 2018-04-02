@@ -44,6 +44,7 @@ public class addingitemstocart extends AppCompatActivity {
     List<Cart> cart;
     RecyclerView recyler;
     CartAdaptor cartadaptor;
+    private String message;
     CardView cardview;
     private FirebaseAuth mAuth;
     private GoogleMap mMap;
@@ -54,11 +55,13 @@ public class addingitemstocart extends AppCompatActivity {
     public static Location currentlocation;
     EditText locations;
     private double total;
+    private String Name;
     TextView tv;
     int PROXIMITY_RADIUS = 10000;
     Button bt;
+    EditText alu,name;
     double latitude,longitude,end_latitude,end_longitude;
-   public int flag1=0,flag2=0;
+    public int flag1=0,flag2=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,28 +69,38 @@ public class addingitemstocart extends AppCompatActivity {
         recyler = (RecyclerView)findViewById(R.id.recyclerView);
         locations = (EditText)findViewById(R.id.search);
         cart = new ArrayList<>();
+        alu = (EditText)findViewById(R.id.addressofdelivery);
+
         mAuth = FirebaseAuth.getInstance();
         tv = (TextView)findViewById(R.id.textView2);
         bt=(Button)findViewById(R.id.payment);
+        name=(EditText)findViewById(R.id.editTextssssss);
+
         String uid = mAuth.getUid().toString();
         db = FirebaseDatabase.getInstance().getReference("Cart").child(uid);
         bt.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            String address = locations.getText().toString();
-            if(TextUtils.isEmpty(address))
-            {
-                Toast.makeText(getApplicationContext(),"Enter the address",Toast.LENGTH_LONG).show();
-                return;
+            @Override
+            public void onClick(View view) {
+                Name =name.getText().toString();
+                String address = locations.getText().toString();
+                String addressofdelivery = alu.getText().toString();
+               // Toast.makeText(getApplicationContext(),Name,Toast.LENGTH_SHORT).show();
+                message = message+"\n"+"City:"+address+"\n"+"Address: "+addressofdelivery+"\n"+"Birth Day cake name: "+Name+"\n";
+                if(TextUtils.isEmpty(address) && TextUtils.isEmpty(addressofdelivery) && TextUtils.isEmpty(Name))
+                {
+                    Toast.makeText(getApplicationContext(),"please fill the following details",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                Intent intent = new Intent(addingitemstocart.this,BillActivity.class);
+                intent.putExtra("bill",total);
+                intent.putExtra("flag1",flag1);
+                intent.putExtra("flag2",flag2);
+                intent.putExtra("address",address);
+                intent.putExtra("message",message );
+                intent.putExtra("addressofdelivery",addressofdelivery);
+                startActivity(intent);
             }
-            Intent intent = new Intent(addingitemstocart.this,BillActivity.class);
-            intent.putExtra("bill",total);
-            intent.putExtra("flag1",flag1);
-            intent.putExtra("flag2",flag2);
-            intent.putExtra("address",address);
-            startActivity(intent);
-        }
-    });
+        });
     }
     @Override
     protected void onStart() {
@@ -96,11 +109,14 @@ public class addingitemstocart extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 cart.clear();
+                message="";
+                total=0.0;
                 for(DataSnapshot d :dataSnapshot.getChildren())
                 {
                     Cart a = d.getValue(Cart.class);
                     cart.add(a);
                     total = total + Double.parseDouble(a.getRs());
+                    message = "The Food: "+a.getName()+"   "+"cost: "+a.getRs()+"   "+"Quantity: "+a.getQuantity()+"\n"+message;
                     Log.v("Total",total+"helo");
                     if(a.getId().equals("cakes"))
                     {

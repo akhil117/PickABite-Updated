@@ -69,14 +69,8 @@ public class Checkout extends AppCompatActivity {
         String uid = mAuth.getUid().toString();
 
         mref = mRef.getReference("Cart").child(uid);
-        bt = (Button)findViewById(R.id.hello);
-        bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(Checkout.this,addingitemstocart.class);
-                startActivity(intent1);
-            }
-        });
+       // bt = (Button)findViewById(R.id.hello);
+
 
         ///////////////////////////////////////
         Payu.setInstance(this);
@@ -114,6 +108,7 @@ public class Checkout extends AppCompatActivity {
             mref.child(key).child("rs").setValue(totalamount);
             mref.child(key).child("name").setValue(name);
             mref.child(key).child("id").setValue(cart);
+            mref.child(key).child("quantity").setValue(quantity);
         }
     }
     public void navigateToBaseActivity(View view) {

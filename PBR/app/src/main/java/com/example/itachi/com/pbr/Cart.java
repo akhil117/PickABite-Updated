@@ -5,17 +5,27 @@ package com.example.itachi.com.pbr;
  */
 
 public class Cart {
-    private String Name,Rs,Id;
+    private String Name,Rs,Id,Quantity;
     public Cart()
     {
 
     }
-    public Cart(String Name,String Rs,String Id)
+    public Cart(String Name,String Rs,String Id,String Quantity)
     {
+        this.Quantity=Quantity;
         this.Name= Name;
         this.Rs= Rs;
         this.Id = Id;
     }
+
+    public String getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        Quantity = quantity;
+    }
+
     public String getId()
     {
         return  Id;

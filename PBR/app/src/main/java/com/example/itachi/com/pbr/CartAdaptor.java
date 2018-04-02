@@ -48,6 +48,7 @@ public class CartAdaptor extends RecyclerView.Adapter <CartAdaptor.CartViewHolde
         Cart c = cart.get(position);
         holder.name.setText(c.getName());
         holder.rupees.setText(c.getRs());
+        holder.Quantity.setText(c.getQuantity());
 
 
     }
@@ -59,7 +60,7 @@ public class CartAdaptor extends RecyclerView.Adapter <CartAdaptor.CartViewHolde
 
     class CartViewHolder extends  RecyclerView.ViewHolder implements  View.OnLongClickListener
     {
-        TextView rupees,name;
+        TextView rupees,name,Quantity;
         CardView card;
         public CartViewHolder(View itemView)
         {
@@ -67,6 +68,7 @@ public class CartAdaptor extends RecyclerView.Adapter <CartAdaptor.CartViewHolde
             card = (CardView)itemView.findViewById(R.id.cardadaptor);
             rupees=itemView.findViewById(R.id.rupeecart);
             name=itemView.findViewById(R.id.namecart);
+            Quantity=itemView.findViewById(R.id.Q);
             card.setOnLongClickListener(this);
         }
 

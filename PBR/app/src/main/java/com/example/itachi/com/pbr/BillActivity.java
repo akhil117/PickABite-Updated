@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,7 +22,9 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
+import java.util.Properties;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
 import java.io.IOException;
 import java.util.List;
 
@@ -35,27 +38,35 @@ public class BillActivity extends AppCompatActivity implements AsyncResponse{
     private Location lastLocation;
     public static final int req=123;
     public static Location currentlocation;
-    EditText locations;
+
     private double total;
     TextView tv;
     int PROXIMITY_RADIUS = 10000;
-    Button bt;
+
     double latitude,longitude,end_latitude,end_longitude;
     String location;
     StringBuilder out;
     int i=0;
     public static String otu;
+    private Button bt;
+    private String message,email,subject,addressdelivery;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill);
+        subject = "PickABiteNotification";
+        email = "lifehacker2k18@gmail.com";
+
         Intent intent = getIntent();
+       message = intent.getExtras().getString("message");
+       addressdelivery = intent.getExtras().getString("addressofdelivery");
+        bt =(Button)findViewById(R.id.payment) ;
         Total = intent.getExtras().getDouble("bill");
         tv = (TextView)findViewById(R.id.bill);
         flag1 = intent.getExtras().getInt("flag1");
         flag2 = intent.getExtras().getInt("flag2");
         location = intent.getExtras().getString("address");
-        Toast.makeText(getApplicationContext(),Total+","+flag1+","+flag2,Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(),Total+","+flag1+","+flag2,Toast.LENGTH_LONG).show();
         if(flag1==1 && flag2==2)
         {
             ///only user had ordered both kinds of stuff///
@@ -89,6 +100,18 @@ public class BillActivity extends AppCompatActivity implements AsyncResponse{
             char c='1';
             StringBuilder out=new StringBuilder("");
         }
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ///////////Pavan you should code here///////////////////////////
+                /////////////pavan payment must be done///////////////////////
+                /////////////pavan payment should be done from this button///////////
+               SendMail sm = new SendMail(BillActivity.this, email, subject, message);
+                //Executing sendmail to send email
+               sm.execute();
+
+            }
+        });
     }
     public Location hello()
     {
@@ -188,9 +211,11 @@ public class BillActivity extends AppCompatActivity implements AsyncResponse{
                 c = output.charAt(i);
             }
             String a = out.toString();
-
+           // Toast.makeText(getApplicationContext(),"d"+Total,Toast.LENGTH_SHORT).show();
+            double percentage = Total /10;
+           // Toast.makeText(getApplicationContext(),"m"+percentage,Toast.LENGTH_SHORT).show();
             double total = Double.parseDouble(a) + 17;
-            double k = (total * 8) + Total;
+            double k = (total * 8) + Total+percentage;
             tv.setText("Rs"+k);
         }
         else if (flag1==1)
@@ -203,9 +228,10 @@ public class BillActivity extends AppCompatActivity implements AsyncResponse{
                 i++;
                 c = output.charAt(i);
             }
+            double percentage = Total /10;
             String a = out.toString();
             double total = Double.parseDouble(a);
-            double k = (total * 8) + Total;
+            double k = (total * 8) + Total+percentage;
             tv.setText("Rs"+k);
         }
         else
@@ -219,8 +245,9 @@ public class BillActivity extends AppCompatActivity implements AsyncResponse{
                 c = output.charAt(i);
             }
             String a = out.toString();
+            double percentage = Total * (10/100);
             double total = Double.parseDouble(a);
-            double k = (total * 8) + Total;
+            double k = (total * 8) + Total+percentage;
             tv.setText("Rs"+k);
         }
     }
