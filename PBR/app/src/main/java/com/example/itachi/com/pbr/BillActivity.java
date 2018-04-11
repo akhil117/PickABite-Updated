@@ -216,7 +216,8 @@ public class BillActivity extends AppCompatActivity implements AsyncResponse{
            // Toast.makeText(getApplicationContext(),"m"+percentage,Toast.LENGTH_SHORT).show();
             double total = Double.parseDouble(a) + 17;
             double k = (total * 8) + Total+percentage;
-            tv.setText("Rs"+k);
+            double service =(total*8)+percentage;
+            tv.setText("Rs"+Total+"+"+"Servicetax: Rs"+service +"= Rs"+k);
         }
         else if (flag1==1)
         {
@@ -232,7 +233,8 @@ public class BillActivity extends AppCompatActivity implements AsyncResponse{
             String a = out.toString();
             double total = Double.parseDouble(a);
             double k = (total * 8) + Total+percentage;
-            tv.setText("Rs"+k);
+            double service =(total*8)+percentage;
+            tv.setText("Rs"+Total+"+"+"Servicetax: Rs"+service +"= Rs"+k);
         }
         else
         {
@@ -248,7 +250,9 @@ public class BillActivity extends AppCompatActivity implements AsyncResponse{
             double percentage = Total * (10/100);
             double total = Double.parseDouble(a);
             double k = (total * 8) + Total+percentage;
-            tv.setText("Rs"+k);
+            double service =(total*8)+percentage;
+            tv.setText("Rs"+Total+"+"+"Servicetax: Rs"+service +"= Rs"+k);
+
         }
     }
 }

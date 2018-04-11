@@ -1,1 +1,1 @@
-include ':app', ':sdkui'
+include ':app', ':sdkui', ':facebook'

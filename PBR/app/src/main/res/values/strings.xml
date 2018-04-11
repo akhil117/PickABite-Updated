@@ -5,4 +5,13 @@
     <string name="forgot_password">Forgot PassWord????</string>
     <string name="we_just_need_your_registered_email_id_to_sent_you_password_reset_instructions">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="enter_the_email">Enter the email</string>
+    <string name="facebook_app_id">627367384269074</string>
+    <string name="fb_login_protocol_scheme">fb627367384269074</string>
+
+<string name="action_settings">Settings</string>
+
+    <!-- Button text -->
+<string name="btn_logout_from_google">Logout from Google</string>
+<string name="btn_revoke_access">Revoke Access</string>
+
 </resources>
