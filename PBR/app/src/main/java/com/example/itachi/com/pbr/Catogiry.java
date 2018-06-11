@@ -28,6 +28,7 @@ public class Catogiry extends AppCompatActivity {
         int i;
         super.onCreate(savedInstanceState);
         requestWindowFeature( Window.FEATURE_NO_TITLE );
+        getSupportActionBar().setLogo(R.drawable.pab_logo_org1);
 
         getWindow().setFlags( WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN );
@@ -41,6 +42,10 @@ public class Catogiry extends AppCompatActivity {
 
 
         if(intent.getExtras().getInt("value",0)==1){
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+          getSupportActionBar().setLogo(R.drawable.pab_logo_org1);
+
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
             mref = FirebaseDatabase.getInstance().getReference("Cakes");
             //about = FirebaseDatabase.getInstance().getReference("About");
             mref.addChildEventListener(new ChildEventListener() {
@@ -82,6 +87,10 @@ public class Catogiry extends AppCompatActivity {
             });
         }
         else if(intent.getExtras().getInt("value",0)==3){
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setLogo(R.drawable.pab_logo_org1);
+
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
             mref = FirebaseDatabase.getInstance().getReference("Snacks");
             //about = FirebaseDatabase.getInstance().getReference("About");
             mref.addChildEventListener(new ChildEventListener() {
@@ -123,6 +132,10 @@ public class Catogiry extends AppCompatActivity {
             });
         }
         else if(intent.getExtras().getInt("value",0)==2){
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setLogo(R.drawable.pab_logo_org1);
+
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
             mref = FirebaseDatabase.getInstance().getReference("Northy");
             //about = FirebaseDatabase.getInstance().getReference("About");
             mref.addChildEventListener(new ChildEventListener() {
