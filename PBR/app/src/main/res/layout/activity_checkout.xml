@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.itachi.com.pbr.Checkout"
-    android:background="@drawable/pabsvg"
+    android:background="@drawable/l"
     >
     <ImageView
         android:layout_width="155dp"
@@ -58,68 +58,24 @@
             android:layout_weight="2"
             android:textSize="25sp"
             android:text="@string/quantity"/>
+
         <EditText
-            android:singleLine="true"
             android:id="@+id/quantit"
-            android:hint="#"
-            android:layout_weight="1"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:inputType="numberDecimal"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginRight="15dp"
+            android:layout_marginLeft="75dp"
+            android:layout_weight="2"
+            android:ems="10"
+            android:inputType="numberSigned" />
+
+
     </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/Lightgray"
         android:layout_margin="5dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/taxes"
-            android:layout_weight="1"
-            android:textSize="25sp"
-            android:layout_margin="10dp"
-            android:text="NAME"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:layout_weight="1"
-            android:id="@+id/taxesamount"
-            android:layout_margin="10dp"
-            android:text="NAME"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/total"
-            android:textSize="25sp"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
-            android:text="NAME"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:layout_weight="1"
-            android:id="@+id/totalamount"
-            android:layout_margin="10dp"
-            android:text="NAME"/>
-
-    </LinearLayout>
-
 
     <Button
         android:layout_width="160dp"
@@ -129,8 +85,9 @@
         android:text="Checkout"
         android:layout_gravity="center"
         android:layout_marginBottom="15dp"
+        android:onClick="Checkout"
         android:drawableLeft="@drawable/chechout"
-        android:onClick="navigateToBaseActivity"/>
+        />
     <Button
         android:layout_width="155dp"
         android:layout_weight="1"
@@ -143,4 +100,8 @@
 
 
 
+
+
+
 </LinearLayout>
+
